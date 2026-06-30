@@ -7,6 +7,8 @@ A mobile-first homepage concept for **Immaculate Conception Catholic Church**, P
 🔗 **Live demo:** _add your GitHub Pages URL here_
 📄 **Status:** Static visual mockup — not yet connected to a backend.
 
+https://ambrosecheng-bot.github.io/Immaculate-/
+
 ---
 
 ## What this is
