@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immaculate Conception Catholic Church — Southampton</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-900:#15233f;   /* deep Marian navy */
+    --blue-800:#1d3157;
+    --blue-700:#2a4475;
+    --blue-100:#e7ebf3;
+    --gold:#c8a45c;        /* sacred gold accent */
+    --gold-soft:#e3cf9f;
+    --platinum:#c2c7d0;    /* jubilee silver */
+    --platinum-light:#e9ebef;
+    --cream:#faf8f3;       /* page background */
+    --paper:#ffffff;
+    --ink:#1a1d26;
+    --ink-soft:#4b5160;
+    --line:rgba(21,35,63,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    padding-bottom:72px; /* room for mobile bottom nav */
+  }
+  .wrap{max-width:520px;margin:0 auto;background:var(--cream);position:relative;overflow:hidden}
+  h1,h2,h3{font-family:'Cormorant',Georgia,serif;font-weight:600;line-height:1.1;letter-spacing:.2px}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--gold);
+  }
+  .stars{letter-spacing:.35em;color:var(--gold);font-size:11px}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 18px;background:var(--blue-900);color:#fff;
+    position:sticky;top:0;z-index:40;
+  }
+  .topbar .badge{
+    width:34px;height:34px;border-radius:50%;
+    border:1.5px solid var(--gold);display:grid;place-items:center;
+    font-family:'Cormorant',serif;font-size:18px;color:var(--gold-soft);flex:none;
+  }
+  .topbar .name{font-family:'Cormorant',serif;font-size:18px;line-height:1.05}
+  .topbar .name small{display:block;font-family:'Inter';font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--platinum);font-weight:500}
+  .topbar .live{
+    margin-left:auto;display:inline-flex;align-items:center;gap:6px;
+    font-size:11px;font-weight:600;color:#fff;border:1px solid rgba(255,255,255,.25);
+    padding:5px 10px;border-radius:999px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:#e0584f;box-shadow:0 0 0 0 rgba(224,88,79,.6);animation:pulse 2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(224,88,79,.5)}70%{box-shadow:0 0 0 7px rgba(224,88,79,0)}100%{box-shadow:0 0 0 0 rgba(224,88,79,0)}}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;color:#fff;text-align:center;
+    padding:46px 24px 40px;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(200,164,92,.18), transparent 55%),
+      linear-gradient(180deg,var(--blue-800),var(--blue-900));
+  }
+  .crown{display:flex;justify-content:center;gap:5px;margin-bottom:18px}
+  .crown span{color:var(--gold);font-size:10px;opacity:.85}
+  .hero h1{font-size:40px;margin:6px 0 4px}
+  .hero .sub{font-family:'Cormorant',serif;font-style:italic;font-size:20px;color:var(--gold-soft);margin-bottom:18px}
+  .hero p{color:#d6ddec;font-size:14.5px;max-width:34ch;margin:0 auto 24px}
+  .cta-row{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:600;font-size:15px;padding:14px 18px;border-radius:12px;
+    border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .2s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-gold{background:var(--gold);color:var(--blue-900)}
+  .btn-gold:hover{background:var(--gold-soft)}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08)}
+  .hero-foot{margin-top:22px;font-size:12px;color:var(--platinum);display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  .hero-foot b{color:#fff;font-weight:600}
+
+  /* ---------- Jubilee banner ---------- */
+  .jubilee{
+    margin:0;padding:26px 24px;text-align:center;color:var(--blue-900);
+    background:
+      linear-gradient(180deg,var(--platinum-light),#fff);
+    border-top:1px solid var(--gold);border-bottom:1px solid var(--line);
+  }
+  .jubilee .big{font-family:'Cormorant',serif;font-size:64px;font-weight:600;line-height:1;color:var(--blue-800);letter-spacing:1px}
+  .jubilee .big .yrs{font-size:18px;display:block;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+  .jubilee h2{font-size:26px;margin:12px 0 6px}
+  .jubilee p{color:var(--ink-soft);font-size:14px;max-width:36ch;margin:0 auto 16px}
+  .btn-blue{background:var(--blue-800);color:#fff}
+  .btn-blue:hover{background:var(--blue-700)}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding:34px 22px}
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin-bottom:18px}
+  .sec-head h2{font-size:27px;color:var(--blue-900)}
+  .sec-head .eyebrow{margin-bottom:6px;display:block}
+
+  /* ---------- Welcome ---------- */
+  .welcome{background:var(--paper);border-top:1px solid var(--line)}
+  .welcome blockquote{
+    font-family:'Cormorant',serif;font-size:22px;font-style:italic;
+    color:var(--blue-800);line-height:1.4;border-left:3px solid var(--gold);
+    padding-left:16px;margin:4px 0 14px;
+  }
+  .welcome p{color:var(--ink-soft);font-size:14.5px;margin-bottom:12px}
+  .signoff{font-family:'Cormorant',serif;font-size:18px;color:var(--blue-900);margin-top:6px}
+  .signoff small{display:block;font-family:'Inter';font-size:12px;letter-spacing:.06em;color:var(--gold);text-transform:uppercase;font-weight:600}
+
+  /* ---------- Mass times ---------- */
+  .mass{background:var(--blue-900);color:#fff}
+  .mass .sec-head h2{color:#fff}
+  .mass .eyebrow{color:var(--gold-soft)}
+  .mtable{border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden}
+  .mrow{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .mrow:last-child{border-bottom:0}
+  .mrow.sun{background:rgba(200,164,92,.12)}
+  .mrow .day{font-weight:600;font-size:14px}
+  .mrow .day small{display:block;font-weight:400;font-size:11px;color:var(--platinum)}
+  .mrow .time{font-family:'Cormorant',serif;font-size:18px;color:var(--gold-soft)}
+  .mass .more{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12.5px}
+  .chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:10px 12px}
+  .chip b{display:block;color:var(--gold-soft);font-family:'Cormorant',serif;font-size:15px;font-weight:600;margin-bottom:2px}
+
+  /* ---------- Plan visit ---------- */
+  .visit{background:var(--cream)}
+  .vgrid{display:flex;flex-direction:column;gap:12px}
+  .vcard{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .vcard .ic{width:38px;height:38px;border-radius:10px;background:var(--blue-100);color:var(--blue-800);display:grid;place-items:center;flex:none;font-family:'Cormorant',serif;font-size:20px}
+  .vcard h3{font-size:18px;color:var(--blue-900);margin-bottom:2px}
+  .vcard p{font-size:13px;color:var(--ink-soft)}
+
+  /* ---------- Cards grid (Get involved) ---------- */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tile{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 16px;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+  .tile .stars{position:absolute;top:14px;left:16px;opacity:.6}
+  .tile h3{font-size:19px;color:var(--blue-900);margin-bottom:3px}
+  .tile p{font-size:12.5px;color:var(--ink-soft)}
+  .tile.full{grid-column:1/-1}
+
+  /* ---------- Shop ---------- */
+  .shop{background:var(--paper);border-top:1px solid var(--line)}
+  .shelf{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .prod{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--cream)}
+  .prod .img{height:120px;display:grid;place-items:center;font-family:'Cormorant',serif;font-size:34px;color:#fff}
+  .prod:nth-child(1) .img{background:linear-gradient(135deg,var(--blue-700),var(--blue-900))}
+  .prod:nth-child(2) .img{background:linear-gradient(135deg,#9a8244,var(--gold))}
+  .prod:nth-child(3) .img{background:linear-gradient(135deg,var(--platinum),#8c93a0)}
+  .prod:nth-child(4) .img{background:linear-gradient(135deg,var(--blue-800),#3a5891)}
+  .prod .meta{padding:12px 14px}
+  .prod h3{font-size:16px;color:var(--blue-900);line-height:1.15}
+  .prod .price{font-family:'Inter';font-size:13px;font-weight:600;color:var(--gold);margin-top:2px}
+  .prod .add{margin-top:10px;width:100%;border:1px solid var(--blue-800);background:transparent;color:var(--blue-800);border-radius:9px;padding:8px;font-size:12.5px;font-weight:600;cursor:pointer}
+  .prod .add:hover{background:var(--blue-800);color:#fff}
+  .shopnote{margin-top:14px;font-size:11.5px;color:var(--ink-soft);text-align:center}
+
+  /* ---------- Register / Donate split ---------- */
+  .actions{background:var(--blue-900)}
+  .acard{background:linear-gradient(180deg,var(--blue-800),var(--blue-900));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:22px;color:#fff;text-align:center;margin-bottom:14px}
+  .acard:last-child{margin-bottom:0}
+  .acard .stars{display:block;margin-bottom:10px}
+  .acard h3{font-size:24px;margin-bottom:6px}
+  .acard p{font-size:13.5px;color:#cdd6e6;max-width:32ch;margin:0 auto 16px}
+  .free{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-900);background:var(--gold-soft);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+
+  /* ---------- Footer ---------- */
+  footer{background:#0f1a30;color:#aeb8cc;padding:30px 22px 36px;text-align:center;font-size:12.5px}
+  footer .name{font-family:'Cormorant',serif;font-size:22px;color:#fff;margin-bottom:4px}
+  footer a{color:var(--gold-soft)}
+  footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 18px;margin:16px 0;font-size:12px}
+  footer .fine{font-size:11px;color:#6f7c95;margin-top:12px;line-height:1.5}
+
+  /* ---------- Bottom mobile nav ---------- */
+  .botnav{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    max-width:520px;margin:0 auto;
+    background:var(--paper);border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(4,1fr);
+    box-shadow:0 -6px 20px rgba(21,35,63,.08);
+  }
+  .botnav a{padding:9px 4px 10px;text-align:center;font-size:10.5px;font-weight:600;color:var(--ink-soft)}
+  .botnav a .gi{display:block;height:22px;line-height:22px;font-family:'Cormorant',serif;font-size:19px;color:var(--blue-800);margin-bottom:1px}
+  .botnav a.key{color:var(--gold)}
+  .botnav a.key .gi{color:var(--gold)}
+
+  @media(min-width:560px){
+    .wrap{box-shadow:0 0 60px rgba(21,35,63,.1)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="badge">IC</div>
+    <div class="name">Immaculate Conception<small>Portswood · Southampton</small></div>
+    <a class="live" href="#" aria-label="Watch Mass live"><span class="dot"></span>Live</a>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="crown" aria-hidden="true">
+      <span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+      <span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+    </div>
+    <div class="eyebrow">A Catholic Faith Community</div>
+    <h1>Come and join us</h1>
+    <div class="sub">inviting · welcoming · nurturing</div>
+    <p>A dynamic, multicultural Catholic family in the heart of Portswood. Whoever you are — you’re welcome here.</p>
+    <div class="cta-row">
+      <a class="btn btn-gold" href="#visit">Plan your first visit →</a>
+      <a class="btn btn-ghost" href="#join">New here? Join free</a>
+    </div>
+    <div class="hero-foot">
+      <span>Sunday Mass <b>8.30 &amp; 10.30 am</b></span>
+      <span>·</span>
+      <span>346 Portswood Road</span>
+    </div>
+  </header>
+
+  <!-- JUBILEE -->
+  <section class="jubilee" id="jubilee">
+    <div class="big">70<span class="yrs">Platinum Jubilee</span></div>
+    <h2>Seventy years since dedication</h2>
+    <p>Celebrating seven decades of faith, family and service in Southampton — 1955 to 2025.</p>
+    <a class="btn btn-blue" href="#" style="max-width:280px;margin:0 auto">Read our parish story</a>
+  </section>
+
+  <!-- WELCOME -->
+  <section class="welcome" id="welcome">
+    <div class="sec-head"><div><span class="eyebrow">A word from our priest</span><h2>A warm welcome</h2></div></div>
+    <blockquote>“It is a joy to welcome you. Come and join us.”</blockquote>
+    <p>We are a discerning, inclusive faith community, rich in ethnicities, cultures and traditions — truly blessed with St Paul’s variety of gifts, and flavoured with humankind’s sprinkling of weaknesses.</p>
+    <p>If you’re new, simply introduce yourself to one of our welcomers at the next Mass. We’d love to meet you.</p>
+    <div class="signoff">Fr. Anthony Chiatu<small>Parish Priest</small></div>
+  </section>
+
+  <!-- MASS TIMES -->
+  <section class="mass" id="mass">
+    <div class="sec-head"><div><span class="eyebrow">When we gather</span><h2>Mass times</h2></div></div>
+    <div class="mtable">
+      <div class="mrow sun"><div class="day">Sunday</div><div class="time">8.30 · 10.30 am</div></div>
+      <div class="mrow"><div class="day">Tuesday – Friday</div><div class="time">10.00 am</div></div>
+      <div class="mrow"><div class="day">Saturday</div><div class="time">10.00 am</div></div>
+      <div class="mrow"><div class="day">Holy Days <small>of Obligation</small></div><div class="time">10 am · 7.30 pm</div></div>
+    </div>
+    <div class="more">
+      <div class="chip"><b>Confessions</b>Saturday 10.30 am, or by appointment</div>
+      <div class="chip"><b>Adoration</b>Tue 9 am · Wed 6 pm · Fri 9 am</div>
+      <div class="chip"><b>Rosary</b>Friday 9.30 am</div>
+      <div class="chip"><b>Tea &amp; Coffee</b>After Sun 10.30 &amp; Tue Mass</div>
+    </div>
+  </section>
+
+  <!-- PLAN VISIT -->
+  <section class="visit" id="visit">
+    <div class="sec-head"><div><span class="eyebrow">First time?</span><h2>What to expect</h2></div></div>
+    <div class="vgrid">
+      <div class="vcard"><div class="ic">⛪</div><div><h3>Just arrive</h3><p>No booking needed. Come a few minutes early and a welcomer will greet you at the door.</p></div></div>
+      <div class="vcard"><div class="ic">☕</div><div><h3>Stay for coffee</h3><p>Join us in the hall after Sunday 10.30 Mass for tea, coffee and a friendly chat.</p></div></div>
+      <div class="vcard"><div class="ic">📍</div><div><h3>Find us</h3><p>346 Portswood Road, Southampton SO17. Street parking nearby.</p></div></div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section id="involved">
+    <div class="sec-head"><div><span class="eyebrow">Belong &amp; grow</span><h2>Get involved</h2></div></div>
+    <div class="tiles">
+      <a class="tile" href="#"><div class="stars">✦✦✦</div><h3>Sacraments</h3><p>Baptism, Eucharist, Confirmation</p></a>
+      <a class="tile" href="#"><div class="stars">✦✦✦</div><h3>Parish groups</h3><p>Find your place to serve</p></a>
+      <a class="tile" href="#"><div class="stars">✦✦✦</div><h3>Outreach</h3><p>Pastoral care &amp; charity</p></a>
+      <a class="tile" href="#"><div class="stars">✦✦✦</div><h3>Newsletter</h3><p>This week at the parish</p></a>
+      <a class="tile full" href="#"><div class="stars">✦✦✦</div><h3>Mass intentions</h3><p>Request a Mass offered for a loved one or a special intention</p></a>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section class="shop" id="shop">
+    <div class="sec-head"><div><span class="eyebrow">Parish shop</span><h2>Books · cards · gifts</h2></div></div>
+    <div class="shelf">
+      <div class="prod"><div class="img">📖</div><div class="meta"><h3>Jubilee Story Book</h3><div class="price">£12.00</div><button class="add">Add to bag</button></div></div>
+      <div class="prod"><div class="img">✦</div><div class="meta"><h3>70th Anniversary Medal</h3><div class="price">£8.00</div><button class="add">Add to bag</button></div></div>
+      <div class="prod"><div class="img">✉</div><div class="meta"><h3>Greeting Cards (set)</h3><div class="price">£5.00</div><button class="add">Add to bag</button></div></div>
+      <div class="prod"><div class="img">🕯</div><div class="meta"><h3>Devotional Candle</h3><div class="price">£6.00</div><button class="add">Add to bag</button></div></div>
+    </div>
+    <p class="shopnote">Secure checkout powered by <strong>Shopify</strong>. Proceeds support the parish.</p>
+  </section>
+
+  <!-- REGISTER / DONATE -->
+  <section class="actions" id="join">
+    <div class="acard">
+      <span class="free">Free · 2 minutes</span>
+      <h3>Join our community</h3>
+      <p>Register your details so we can welcome you properly and keep you in the loop. Required before any sacramental preparation.</p>
+      <a class="btn btn-gold" href="https://p1.pamis.co.uk/sotone/onlineea9e53" style="max-width:260px;margin:0 auto">Register online — free</a>
+    </div>
+    <div class="acard" id="donate">
+      <span class="stars">✦ ✦ ✦</span>
+      <h3>Support the parish</h3>
+      <p>Your giving sustains our worship, outreach and charity. Gift Aid adds 25% at no cost to you.</p>
+      <a class="btn btn-ghost" href="#" style="max-width:260px;margin:0 auto">Ways to donate</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="name">Immaculate Conception</div>
+    <div>346 Portswood Road, Southampton SO17 2TT</div>
+    <div class="links">
+      <a href="#mass">Mass times</a>
+      <a href="#join">Register</a>
+      <a href="#shop">Shop</a>
+      <a href="#">Newsletter</a>
+      <a href="#">Hall hire</a>
+      <a href="#">Contact</a>
+      <a href="#">Safeguarding</a>
+    </div>
+    <div class="fine">
+      Part of the <a href="#">Diocese of Portsmouth</a> · Registered charity 1199568<br>
+      © 2026 Immaculate Conception Church, Portswood, Southampton
+    </div>
+  </footer>
+
+  <!-- BOTTOM NAV (mobile-first) -->
+  <nav class="botnav" aria-label="Primary">
+    <a href="#visit"><span class="gi">⛪</span>Visit</a>
+    <a href="#mass"><span class="gi">🕑</span>Times</a>
+    <a href="#shop"><span class="gi">🛍</span>Shop</a>
+    <a class="key" href="#join"><span class="gi">✦</span>Join free</a>
+  </nav>
+
+</div>
+</body>
+</html>
